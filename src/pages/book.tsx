@@ -561,7 +561,7 @@ return (
       colorScheme="teal"
       size={{ base: "sm", md: "md" }}
       onClick={addMemo}
-      flex="1" // 操作列の横幅に合わせる
+      flex="1" // 操作列の横幅に合わせるんだよね
     >
       追加
     </Button>
