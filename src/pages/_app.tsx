@@ -1,17 +1,42 @@
-import "@/styles/globals.css";
+
+
+// import { ChakraProvider } from "@chakra-ui/react";
+// import { RecoilRoot } from "recoil";
+// import type { AppProps } from "next/app";
+// import { SessionProvider } from "@/providers/SessionProvider"; // インポート
+
+// function MyApp({ Component, pageProps }: AppProps) {
+//   return (
+//     <RecoilRoot>
+//       <SessionProvider> {/* SessionProviderで全体をラップ */}
+//         <ChakraProvider>
+//           <Component {...pageProps} />
+//         </ChakraProvider>
+//       </SessionProvider>
+//     </RecoilRoot>
+//   );
+// }
+
+// export default MyApp;
+
+import { ChakraProvider } from "@chakra-ui/react";
+import { RecoilRoot } from "recoil";
 import type { AppProps } from "next/app";
-import { ChakraProvider } from '@chakra-ui/react'
+import { SessionProvider } from "@/providers/SessionProvider";
 
-
-
-
-
-
-
-export default function App({ Component, pageProps }: AppProps) {
-  return <ChakraProvider><Component {...pageProps} /> </ChakraProvider>;
-
-
-
-  
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <RecoilRoot>
+      <SessionProvider>
+        <ChakraProvider>
+          <Component {...pageProps} />
+        </ChakraProvider>
+      </SessionProvider>
+    </RecoilRoot>
+  );
 }
+
+export default MyApp;
+
+
+
